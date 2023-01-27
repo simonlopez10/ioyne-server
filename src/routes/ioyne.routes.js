@@ -4,16 +4,20 @@ const { Router } = require('express');
 const router = Router();
 
 //clients controllers
-const { 
+const {
   createClient,
   getAllClients
- } = require('../controllers/clients.controllers')
+} = require('../controllers/clients.controllers');
+
 
 //db controllers
 //const { } = require('../controllers/db.controllers')  
 
 //products controllers
-//const { } = require('../controllers/products.controllers')
+const {
+  createProduct,
+  getAllProducts
+} = require('../controllers/products.controllers');
 
 //quotations controllers
 //const { } = require('../controllers/quotations.controllers')
@@ -33,11 +37,16 @@ router.get('/clients', getAllClients)
 
 // PRODUCTS ROUTES
 
+// create a product
+router.post('/products', createProduct)
+// get all products
+router.get('/products', getAllProducts)
+
 // QUOTATIONS EOUTES
 
 // USERS ROUTES
 
 
-console.log()  
+console.log()
 
 module.exports = router;
