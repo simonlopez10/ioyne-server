@@ -3,17 +3,17 @@
 const { Router } = require('express');
 const router = Router();
 
-//clients controllers
+// CLIENTS CONTROLLERS
 const {
   createClient,
   getAllClients
 } = require('../controllers/clients.controllers');
 
 
-//db controllers
+// DB CONTROLLERS
 //const { } = require('../controllers/db.controllers')  
 
-//products controllers
+// PRODUCTS CONTROLLERS
 const {
   createProduct,
   getAllProducts
@@ -22,8 +22,11 @@ const {
 //quotations controllers
 //const { } = require('../controllers/quotations.controllers')
 
-//users controllers
-//const { } = require('../controllers/users.controllers')
+// USERS CONTROLLERS
+const {
+  createUser,
+  getAllUsers
+} = require('../controllers/users.controllers')
 
 
 // CLIENTS ROUTES
@@ -33,7 +36,10 @@ router.post('/clients', createClient)
 // get all clients
 router.get('/clients', getAllClients)
 
+
 // DB ROUTES
+
+
 
 // PRODUCTS ROUTES
 
@@ -42,9 +48,17 @@ router.post('/products', createProduct)
 // get all products
 router.get('/products', getAllProducts)
 
-// QUOTATIONS EOUTES
+
+// QUOTATIONS ROUTES
+
+
 
 // USERS ROUTES
+
+// create a user
+router.post('/users', createUser)
+// get all users
+router.get('/users', getAllUsers)
 
 
 console.log()
